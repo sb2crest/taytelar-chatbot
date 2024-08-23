@@ -253,7 +253,7 @@
 }
 
 .react-chatbot-kit-chat-btn-send-icon {
-  fill: #298bf4;
+  fill: #BA933E;
 }
 .react-chatbot-kit-chat-btn-send{
   width: 50px;
@@ -271,38 +271,47 @@
 .orders-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .order-card {
   display: flex;
-  flex-direction: column; /* Ensure vertical layout */
+  flex-direction: column;
   background-color: #f5f5f5;
   padding: 6px;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.8s ease;
   overflow: hidden;
+  max-height: 100px; /* Initial height to fit image and basic info */
 }
 
 .order-card.expanded {
-  max-height: 400px; /* Adjust based on content */
+  max-height: 300px; /* Adjust based on content */
+
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .order-info {
   display: flex;
   flex-direction: column;
   text-align: start;
+  margin-left: 6px; /* Space between image and text */
 }
 
 .oname {
-  margin: 0;
-  font-size: 12px;
+  margin-left: -2px;
+  font-size: 10px;
   font-weight: bold;
 }
 
-.price {
+.quantity, .price {
   font-size: 10px;
   color: #666;
 }
@@ -323,30 +332,40 @@
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
-  border: #000 solid 1px;
+  border: #BA933E solid 1px;
 }
 
 .order-actions {
-  margin-top: 10px;
+  margin-top: 6px;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  padding: 0 6px 0 8px;
+  gap: 16px;
 }
 
 .action-button {
   padding: 6px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .track {
-  background-color: #4caf50;
+  background-color: #383f38;
+  transition: background-color 0.3s ease;
   color: white;
+}
+.track:hover {
+  background-color: #BA933E; /* Darker green when hovered */
 }
 
 .cancel {
-  background-color: #f44336;
+  background-color: #444444;
+  transition: background-color 0.3s ease;
   color: white;
+}
+
+.cancel:hover {
+  background-color: #BA933E;
 }

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../utils/styles.css";
+import { FaTruckFast } from "react-icons/fa6";
+import { ImCancelCircle } from "react-icons/im";
 
 const OrderDetailsForm = (props) => {
   const [orders, setOrders] = useState([]);
@@ -60,23 +62,25 @@ const OrderDetailsForm = (props) => {
             key={order.id}
             onClick={() => handleCardClick(order.id)}
           >
-            <div className="order-info">
-              <div className="oname">{order.productName}</div>
-              <div className="quantity" style={{ fontWeight: 'bold', color: 'black' }}>{order.quantity}</div>
-              <div className="price">₹ {order.price.toFixed(2)}</div>
-              <div className="desc">{order.desc}</div>
-            </div>
-            <div className="order-image">
-              {order.imageUrl ? (
-                <img src={order.imageUrl} alt={order.productName} />
-              ) : (
-                <p>No Image</p>
-              )}
+            <div className="card-content">
+              <div className="order-info">
+                <div className="oname">{order.productName}</div>
+                <div className="quantity" style={{ fontWeight: 'bold', color: 'black' }}>{order.quantity}</div>
+                <div className="price">₹ {order.price.toFixed(2)}</div>
+                <div className="desc">{order.desc}</div>
+              </div>
+              <div className="order-image">
+                {order.imageUrl ? (
+                  <img src={order.imageUrl} alt={order.productName} />
+                ) : (
+                  <p>No Image</p>
+                )}
+              </div>
             </div>
             {expandedOrderId === order.id && (
               <div className="order-actions">
-                <button className="action-button track">Track My Order</button>
-                <button className="action-button cancel">Cancel My Order</button>
+                <button className="action-button track"><FaTruckFast/> Track My Order</button>
+                <button className="action-button cancel"><ImCancelCircle /> Cancel My Order</button>
               </div>
             )}
           </div>

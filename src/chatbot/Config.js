@@ -31,8 +31,6 @@ const config = () => {
   
   ];
 
-  
-
   return {
     botName,
     initialMessages,
@@ -50,17 +48,18 @@ const config = () => {
           <img
             src={headerImage}
             alt="Header"
-            style={{ width: "40px", height: "40px", marginRight: "10px" }}
+            style={{ width: "40px", height: "40px", margin: "0 10px 0 7px"}}
           />
           <div>
-            <p style={{ fontSize: "16px", lineHeight: "0px", }}>
+            <p style={{ fontSize: "16px", lineHeight: "0px"}}>
               <strong>{botName}</strong>
             </p>
             <p
               style={{
                 fontSize: "12px",
                 lineHeight: "0px",
-                color: "BA933E"
+                marginLeft:"-24px",
+                color: "#BA933E"
               }}
             >
               Online

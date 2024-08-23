@@ -9,7 +9,7 @@
   align-items: center;
   margin: 5px;
   padding: 10px;
-  color: rgba(186, 147, 62, 1);
+  color: whitesmoke;
   background-color:rgba(68, 68, 68, 1);
   border: none;
   border-radius: 11px;
@@ -19,7 +19,7 @@
 }
 
 .option-button:hover {
-  background-color: #e1e1e1;
+  background-color: #BA933E;
 }
 
 .option-content {
