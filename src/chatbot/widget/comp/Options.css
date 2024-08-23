@@ -9,7 +9,8 @@
   align-items: center;
   margin: 5px;
   padding: 10px;
-  background-color:rgba(245, 245, 245, 1);
+  color: rgba(186, 147, 62, 1);
+  background-color:rgba(68, 68, 68, 1);
   border: none;
   border-radius: 11px;
   cursor: pointer;

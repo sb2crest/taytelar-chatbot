@@ -62,7 +62,7 @@ const OrderDetailsForm = (props) => {
           >
             <div className="order-info">
               <div className="oname">{order.productName}</div>
-              <div className="price" style={{ fontWeight: 'bold', color: 'black' }}>{order.quantity}</div>
+              <div className="quantity" style={{ fontWeight: 'bold', color: 'black' }}>{order.quantity}</div>
               <div className="price">₹ {order.price.toFixed(2)}</div>
               <div className="desc">{order.desc}</div>
             </div>
