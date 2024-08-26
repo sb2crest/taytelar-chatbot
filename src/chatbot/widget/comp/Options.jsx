@@ -8,13 +8,13 @@ const Options = (props) => {
   const options =  [
         {
           text: "Order Details",
-          icon: addEmployeeIcon,
+          icon: getEmployeeIcon,
           handler: props.actionProvider.handleOrderDetails,
           id: 1,
         },
         {
           text: "Loyalty Points",
-          icon: getEmployeeIcon,
+          icon: addEmployeeIcon,
           handler: props.actionProvider.handleLoyalyPoints,
           id: 2,
         },

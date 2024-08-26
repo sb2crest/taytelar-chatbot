@@ -20,9 +20,12 @@ const ChatbotComponent = ({userType}) => {
   return (
     <>
       {!isChatbotOpen && (
-        <button className="toggle-button" onClick={toggleChatbot}>
-          <img src={botImage} alt="botImage" style={{ width: '30px', height: '30px'}} />
-        </button>
+        <img 
+          src={botImage} 
+          alt="botImage" 
+          className="chatbot-icon-img" 
+          onClick={toggleChatbot} 
+        />
       )}
 
       <AnimatePresence>
@@ -37,7 +40,7 @@ const ChatbotComponent = ({userType}) => {
             <button className="close-button" onClick={closeChatbot}>
               <IoClose style={{ fontSize: "24px" ,color:'black'}} />
             </button>
-            <ChatbotWrapper userType ={userType}/>
+            <ChatbotWrapper userType={userType} />
           </motion.div>
         )}
       </AnimatePresence>

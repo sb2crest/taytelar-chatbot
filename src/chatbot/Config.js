@@ -6,7 +6,7 @@ import headerImage from "./widget/icons/chat.svg";
 import OrderDetailsForm from "./widget/comp/OrderDetailsForm"
 
 const config = () => {
-  const botName = "TayTellar";
+  const botName = "TayTelar";
 
   const initialMessages = [
     createChatBotMessage(`Welcome ! How can I assist you today?`, {
