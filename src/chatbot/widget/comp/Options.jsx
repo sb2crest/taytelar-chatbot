@@ -1,20 +1,20 @@
 import React from "react";
 import "./Options.css";
-import addEmployeeIcon from "../icons/addIcon.svg";
-import getEmployeeIcon from "../icons/getIcon.svg";
+import loyaltyPoint from "../icons/addIcon.svg";
+import orderDetails from "../icons/OrderDetails.svg";
 
 const Options = (props) => {
   
   const options =  [
         {
           text: "Order Details",
-          icon: addEmployeeIcon,
+          icon: orderDetails,
           handler: props.actionProvider.handleOrderDetails,
           id: 1,
         },
         {
           text: "Loyalty Points",
-          icon: getEmployeeIcon,
+          icon: loyaltyPoint,
           handler: props.actionProvider.handleLoyalyPoints,
           id: 2,
         },

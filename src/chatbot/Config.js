@@ -4,9 +4,10 @@ import MessageParser from "./MessageParser";
 import Options from "./widget/comp/Options";
 import headerImage from "./widget/icons/chat.svg";
 import OrderDetailsForm from "./widget/comp/OrderDetailsForm"
+import LoyaltyPointsForm from "./widget/comp/LoyaltyPointsForm.js"
 
 const config = () => {
-  const botName = "TayTellar";
+  const botName = "TayTelar";
 
   const initialMessages = [
     createChatBotMessage(`Welcome ! How can I assist you today?`, {

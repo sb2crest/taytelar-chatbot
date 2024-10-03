@@ -1,4 +1,4 @@
-/* Adjust button position */
+/* Toggle button for opening the chatbot */
 .toggle-button {
   position: fixed;
   bottom: 20px;
@@ -13,23 +13,30 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.chatbot-icon {
-  width: 24px;
-  height: 24px;
-  fill: #fff;
-}
-
+/* Close button styles */
 .close-button {
   position: absolute;
   top: 8px;
-  right: -2px;
+  right: 8px; /* Adjusted to make room for minimize button */
   background: transparent;
   border: none;
-  font-size: 10px;
+  font-size: 24px;
   cursor: pointer;
   color: #dc3545;
   z-index: 5;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0);
+}
+
+/* Minimize button styles */
+.minimize-button {
+  position: absolute;
+  top: 8px;
+  right: 40px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #007bff; /* Adjust color as needed */
+  z-index: 5;
 }
 
 /* Chatbot container styles */
@@ -43,33 +50,44 @@
   border: 1px solid #ccc;
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-  display: none;
-  transition: max-height 0.3s ease;
+  display: block;
+  transition: max-height 0.3s ease, height 0.3s ease;
 }
 
+/* Open state: Full-height chatbot */
 .chatbot-container.open {
-  display: block;
   max-height: 100vh;
 }
 
-.chatbot-container::-webkit-scrollbar {
-  display: none;
+/* Minimized state: Reduced height */
+.chatbot-container.minimized {
+  height: 50px; /* Adjust as needed for minimized state */
+  width: 50px;
+  max-height: 50px; /* Prevent expansion */
+  overflow: hidden;
+  z-index: 1; /* Ensure it's above other content */
 }
 
-.chatbot-container {
-  -ms-overflow-style: none;
+/* Ensure chatbot-wrapper is hidden but still mounted */
+.chatbot-wrapper.hidden {
+  display: none; /* Hide chatbot content when minimized */
 }
 
-/* Chat message container */
+/* Chat message container styles */
 .react-chatbot-kit-chat-message-container {
-  background-color:rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   padding: 10px;
   height: 411px;
   overflow-y: auto; /* Allow vertical scrolling if needed */
 }
 
+/* Hide scrollbar */
 .react-chatbot-kit-chat-message-container::-webkit-scrollbar {
   display: none;
+}
+
+.react-chatbot-kit-chat-message-container {
+  -ms-overflow-style: none;
 }
 
 /* Chat input styles */
@@ -79,16 +97,16 @@
   height: auto;
 }
 
-.react-chatbot-kit-chat-input-form{
+.react-chatbot-kit-chat-input-form {
   height: 36px;
   z-index: 100;
 }
 
-.react-chatbot-kit-chat-btn-send{
+.react-chatbot-kit-chat-btn-send {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   height: auto;
-  background-color:#eee;
+  background-color: #eee;
   border-top: 1px solid #d8d8d8;
 }
 
@@ -99,21 +117,18 @@
   background-color: rgba(245, 245, 245, 1);
   color: black;
   line-height: auto;
-}
-
-.react-chatbot-kit-chat-bot-message{
-  margin-left: 4px;
-  border-top-left-radius:0;
+  border-top-left-radius: 0;
   font-size: 13px;
   width: 85%;
+  margin-left: 4px;
 }
 
-.react-chatbot-kit-user-chat-message{
-  border-top-right-radius:0;
+.react-chatbot-kit-user-chat-message {
+  border-top-right-radius: 0;
   font-size: 13px;
 }
 
-.react-chatbot-kit-chat-inner-container{
+.react-chatbot-kit-chat-inner-container {
   border-radius: 0px;
 }
 
@@ -122,13 +137,14 @@
 .react-chatbot-kit-user-avatar-container {
   display: none;
 }
+
 .react-chatbot-kit-user-chat-message-arrow,
-.react-chatbot-kit-chat-bot-message-arrow{
+.react-chatbot-kit-chat-bot-message-arrow {
   display: none;
 }
 
 .react-chatbot-kit-chat-bot-message-container,
-.react-chatbot-kit-user-chat-message-container{
+.react-chatbot-kit-user-chat-message-container {
   margin: 10px 0px;
   height: auto;
 }
